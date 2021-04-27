@@ -15,12 +15,14 @@
 // 则中位数是 (2 + 3)/2 = 2.5
 
 function getMiddleNum(arr1, arr2) {
-    const mergedArr = [...arr1, ...arr2].sort()
+    const mergedArr = [...arr1, ...arr2].sort((a, b) => a - b)
     const length = mergedArr.length
     return length % 2
         ? mergedArr[Math.floor(length / 2)]
         : (mergedArr[length / 2] + mergedArr[length / 2 - 1]) / 2
 }
 
+
 console.log(getMiddleNum([1, 3], [2]), "getMiddleNum([1, 3], [2])")
 console.log(getMiddleNum([1, 2], [3, 4]), "getMiddleNum([1, 2], [3, 4])")
+console.log(getMiddleNum([-1, -2], [3, 4]), "getMiddleNum([-1, -2], [3, 4])")
